@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-r from-purple-900 via-indigo-900 to-blue-900 text-white transition-colors duration-700;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Gradient text example */
+.gradient-text {
+  background: linear-gradient(90deg, #6D28D9, #F59E0B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button with gradient and glow */
+.btn-gradient {
+  @apply bg-gradient-to-r from-primary to-secondary text-white font-semibold py-2 px-6 rounded-lg shadow-glow-purple transition transform hover:scale-105 hover:shadow-glow-amber;
+  will-change: transform, box-shadow;
+}
+
+/* Section backgrounds with gradients */
+.section-gradient {
+  @apply bg-gradient-to-tr from-purple-800 via-indigo-800 to-blue-800 rounded-xl p-8 shadow-lg;
+}
+
+/* Divider styling */
+.divider {
+  @apply my-16 border-t border-purple-600;
+}
+
+/* Links with gradient underline on hover */
+a {
+  @apply relative text-white font-medium;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #6D28D9, #F59E0B);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
