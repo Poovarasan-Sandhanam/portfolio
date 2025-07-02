@@ -1,65 +1,71 @@
+import React from "react";
+import employeeMSImage from "../assets/nwss.png";
+import bookMSImage from "../assets/barkle.png";
+
 const projects = [
   {
-    name: "Barkle (UK) – Fitness Challenge App",
-    tech: "React Native, Redux, Firebase, REST API, CodePush, Native Modules",
-    points: [
-      "Integrated FCM push notifications and multiple authentication methods.",
-      "Used CodePush for OTA updates and native bridging for platform-specific features.",
-      "Built scalable Redux architecture and real-time sync via Firebase.",
-    ],
+    id: 1,
+    name: "NWS – Fitness Planner",
+    technologies: ["React Native", "Firebase", "Redux", "CodePush"],
+    image: employeeMSImage,
+    github: "https://play.google.com/store/apps/details?id=com.nws&hl=en_GB&pli=1",
   },
   {
-    name: "NWS (India) – Diet & Fitness Planner",
-    tech: "React Native, Redux, Firebase, REST API, CodePush",
-    points: [
-      "Built gamified fitness planner; improved user retention by 15%.",
-      "Created deep linking and dynamic content delivery with secure login.",
-      "Applied CodePush for continuous OTA updates.",
-    ],
-  },
-  {
-    name: "Healthcare App (Freelance)",
-    tech: "React Native, Firebase, Agora, Stripe, Express.js, MongoDB, OAuth",
-    points: [
-      "Developed live video consultations and real-time chat modules.",
-      "Integrated Stripe for secure in-app payments and OAuth login.",
-      "Built backend services for users and scheduling using Express.js and MongoDB.",
-    ],
-  },
-  {
-    name: "Job Portal App (Freelance)",
-    tech: "React Native (Expo), Firebase, Native Modules, Push Notifications",
-    points: [
-      "Designed recruiter dashboard with secure messaging and resume uploads.",
-      "Implemented push notifications and calendar integrations via native modules.",
-    ],
+    id: 2,
+    name: "Barkle – Fitness Challenge App",
+    technologies: ["React Native", "Firebase", "Redux", "Native Modules"],
+    image: bookMSImage,
+    github: "https://play.google.com/store/apps/details?id=com.Barkle.subscription&hl=en_GB",
   },
 ];
 
-export default function Projects() {
+const Projects = () => {
   return (
-    <section className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-heading font-semibold mb-8 border-b-4 border-primary dark:border-secondary w-max">
-        Key Projects
-      </h2>
-      <div className="space-y-6">
-        {projects.map(({ name, tech, points }) => (
-          <div
-            key={name}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-card p-6 transition-colors duration-300"
-          >
-            <h3 className="text-2xl font-semibold mb-1 text-primary dark:text-secondary">
-              {name}
-            </h3>
-            <p className="italic mb-3 text-gray-500 dark:text-gray-400">{tech}</p>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
-              {points.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+    <div className="bg-black text-white py-20" id="project">
+      <div className="container mx-auto px-6 md:px-16 lg:px-24">
+        <h2 className="text-4xl font-bold text-center mb-16">Featured Projects</h2>
+        <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
+            >
+              <div className="w-52 h-96 mx-auto bg-black rounded-[2rem] border-[10px] border-gray-300 shadow-inner relative overflow-hidden">
+                <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-16 h-1.5 bg-gray-400 rounded-full z-10" />
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover rounded-[1.5rem]"
+                />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-2">{project.name}</h3>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="bg-gray-700 text-sm px-3 py-1 rounded-full text-gray-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white px-5 py-2 rounded-full transition duration-300"
+                >
+                  View on Play Store
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Projects;
