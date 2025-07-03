@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* -------------- Custom Base Styles -------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-white;
+  }
+
+  a {
+    @apply text-blue-400 hover:text-blue-500 transition-colors duration-200;
+  }
+}
+
+/* -------------- Custom Components -------------- */
+@layer components {
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-8 text-center;
+  }
+
+  .button-gradient {
+    @apply inline-block px-6 py-2 rounded-full bg-gradient-to-r from-green-400 to-blue-500 text-white hover:from-blue-500 hover:to-green-400 transition duration-300;
+  }
+
+  .tech-badge {
+    @apply bg-gray-800 text-gray-300 text-sm px-3 py-1 rounded-full;
+  }
+
+  .card {
+    @apply bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1;
+  }
+}
+
+/* -------------- Utilities Override (optional) -------------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
