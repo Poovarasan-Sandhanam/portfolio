@@ -1,21 +1,26 @@
-import Navbar from "./components/layout/Navbar";
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
-import Projects from "./components/sections/Projects";
-import Contact from "./components/sections/Contact";
-import Footer from "./components/layout/Footer";
 
-const App = () => {
+import './App.css'
+import About from './components/About'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+import Hero from './components/Hero'
+import Navbar from './components/Navbar'
+import Projects from './components/Projects'
+import Service from './components/Service'
+
+function App() {
+
   return (
-    <div className="bg-black text-white">
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
+    <div>
+        <Navbar />
+        <Hero />
+        <About />
+        <Service />
+        <Projects />
+        <Contact />
+        <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

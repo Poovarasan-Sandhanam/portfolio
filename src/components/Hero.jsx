@@ -1,0 +1,61 @@
+import React from 'react';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import HeroImage from '../assets/aboutme-image.png';  // Update this path to your actual image location
+import '../styles/Hero.css';
+
+const Hero = () => {
+  return (
+    <section className="hero-section" aria-label="Hero Section Introduction">
+      <div className="hero-img-wrapper">
+        <img src={HeroImage} alt="Poovarasan Sandhanam" className="hero-img" />
+      </div>
+
+      <h1 className="hero-heading">
+        I'm{' '}
+        <span className="hero-name-gradient">Poovarasan Sandhanam</span>
+        <br />
+        Full-Stack Developer
+      </h1>
+
+      <p className="hero-subtext">
+        Building clean, scalable, and performant web & mobile apps that users love.
+      </p>
+
+      <div className="hero-buttons">
+        <a href="#contact" aria-label="Contact me section">
+          <button className="btn btn-primary">Contact Me</button>
+        </a>
+
+        <a
+          href="https://drive.google.com/file/d/1WURdKIh0gU5wWI9ESn7jiRoPBUvNjD9E/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Download resume"
+        >
+          <button className="btn btn-secondary">Download Resume</button>
+        </a>
+      </div>
+
+      <div className="hero-social">
+        <a
+          href="https://www.linkedin.com/in/poovarasan-sandhanam-aa29481b0"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn Profile"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://github.com/Poovarasan-Sandhanam"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub Profile"
+        >
+          <FaGithub />
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
