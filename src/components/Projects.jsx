@@ -10,8 +10,9 @@ const projects = [
     name: "NWS – Fitness Planner",
     technologies: ["React Native", "Firebase", "Redux", "CodePush"],
     image: employeeMSImage,
-    github:
+    playstore:
       "https://play.google.com/store/apps/details?id=com.nws&hl=en_GB&pli=1",
+      appstore:"https://apps.apple.com/gb/app/nourish-with-sim/id1547388267",
     description:
       "I implemented major features like workout tracking, user profile management, and integrated Firebase Authentication & Firestore. My focus was performance and offline support using Redux Persist and CodePush for fast deployment.",
   },
@@ -20,8 +21,9 @@ const projects = [
     name: "Barkle – Fitness Challenge App",
     technologies: ["React Native", "Firebase", "Redux", "Native Modules"],
     image: bookMSImage,
-    github:
+    playstore:
       "https://play.google.com/store/apps/details?id=com.Barkle.subscription&hl=en_GB",
+       appstore:"https://apps.apple.com/ai/app/barkle/id6463427532",
     description:
       "Led development of challenge tracking, leaderboard UI, and dynamic content fetching. Built custom native modules for step tracking and implemented Firebase Cloud Messaging for real-time updates.",
   },
@@ -41,11 +43,12 @@ const Projects = () => {
   return (
     <section className="projects-section" id="project">
       <div className="projects-container">
-        <h2 className="projects-title">Featured Projects</h2>
+        <h2 className="projects-title">Projects</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <article className="project-card" key={project.id} tabIndex={0}>
-              <div className="project-image-frame" aria-label={project.name}>
+              <div className="project-image-frame">
+                <div className="notch-bar"></div>
                 <img
                   src={project.image}
                   alt={project.name}
@@ -53,6 +56,7 @@ const Projects = () => {
                   loading="lazy"
                 />
               </div>
+
               <div className="project-info">
                 <h3 className="project-name">{project.name}</h3>
                 <div className="project-tech" aria-label="Technologies used">
@@ -64,7 +68,7 @@ const Projects = () => {
                 </div>
                 <div className="project-actions">
                   <a
-                    href={project.github}
+                    href={project.playstore}
                     className="project-link"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -72,6 +76,16 @@ const Projects = () => {
                   >
                     Play Store <FaExternalLinkAlt className="external-icon" />
                   </a>
+                  <a
+                    href={project.appstore}
+                    className="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open Play Store link for ${project.name}`}
+                  >
+                    App Store <FaExternalLinkAlt className="external-icon" />
+                  </a>
+
                   <button
                     className="project-details-button"
                     onClick={() => openModal(project)}

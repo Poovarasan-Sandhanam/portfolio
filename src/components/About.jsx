@@ -40,22 +40,20 @@ const About = () => {
 
             <div className="stats" role="list" aria-label="Statistics">
               <div className="stat-box" role="listitem">
-                <h4>5+</h4>
+                <h4>2+</h4>
                 <p>Years Experience</p>
               </div>
               <div className="stat-box" role="listitem">
-                <h4>20+</h4>
+                <h4>5+</h4>
                 <p>Projects Completed</p>
               </div>
-              <div className="stat-box" role="listitem">
+              {/* <div className="stat-box" role="listitem">
                 <h4>10+</h4>
                 <p>Clients Served</p>
-              </div>
+              </div> */}
             </div>
 
-            <a href="#contact" className="about-button" aria-label="Contact me">
-              Get In Touch
-            </a>
+        
           </div>
         </div>
       </div>

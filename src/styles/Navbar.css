@@ -1,0 +1,103 @@
+.navbar {
+  background-color: #121212;
+  color: #e0e7ff;
+  padding: 1rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+  backdrop-filter: saturate(180%) blur(10px);
+}
+
+.navbar-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Logo - visible on all screen sizes, gradient text */
+.navbar-logo {
+  font-size: 1.9rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: default;
+  user-select: none;
+  text-shadow: 0 0 8px #8b5cf6cc;
+  transition: text-shadow 0.3s ease;
+}
+
+.navbar-logo:hover,
+.navbar-logo:focus {
+  text-shadow: 0 0 15px #a78bfaee;
+  outline: none;
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.navbar-links a {
+  color: #e0e7ff;
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  user-select: none;
+}
+
+.navbar-links a:hover,
+.navbar-links a:focus {
+  color: #a78bfa;
+  background-color: rgba(167, 139, 250, 0.1);
+  outline: none;
+  text-shadow: 0 0 6px #8b5cf6;
+}
+
+/* Button */
+.navbar-button {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  color: white;
+  font-weight: 700;
+  padding: 0.6rem 1.8rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 7px 20px rgba(167, 139, 250, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.navbar-button:hover,
+.navbar-button:focus {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.8);
+  outline: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar-container {
+    justify-content: center;
+  }
+  .navbar-links {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  .navbar-button {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}

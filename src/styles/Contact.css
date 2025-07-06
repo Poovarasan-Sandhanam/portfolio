@@ -1,0 +1,137 @@
+.contact-section {
+  background-color: #121212; /* same as projects-section background */
+  color: #f0f0f0;
+  padding: 6rem 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+.contact-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  color: #a3a3a3;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.contact-details .detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  color: #d1d5db;
+  font-size: 1rem;
+  user-select: text;
+}
+
+.detail .icon {
+  margin-right: 0.8rem;
+  color: #7c3aed;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.detail a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.detail a:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+.contact-form {
+  background: #1e1f33; /* same as project-card background */
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.8rem;
+}
+
+.form-group label {
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+  color: #d1d5db;
+  font-weight: 600;
+  user-select: none;
+}
+
+.form-group input,
+.form-group textarea {
+  background: #0c1129; /* same as project-image-frame bg */
+  border: 1px solid #394867;
+  border-radius: 1rem;
+  padding: 0.9rem 1.2rem;
+  color: #e0e0e0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 8px #7c3aed99;
+}
+
+.send-button {
+  margin-top: 1.5rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.send-button:hover,
+.send-button:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #4f46e5cc;
+  outline: none;
+}

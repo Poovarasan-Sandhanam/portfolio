@@ -1,0 +1,107 @@
+.experience-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(270deg, #121212, #1a1c2c, #121212);
+  color: #e0e7ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-heading {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(90deg, #a78bfa, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.4);
+  margin-bottom: 4rem;
+  letter-spacing: 0.05em;
+}
+
+.experience-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  border-left: 2px solid #a78bfa66;
+}
+
+.experience-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.15);
+  transition: transform 0.3s ease;
+  padding: 1.5rem 2rem;
+}
+
+.experience-item::before {
+  content: "";
+  position: absolute;
+  left: -1.25rem;
+  top: 1rem;
+  width: 14px;
+  height: 14px;
+  background: #a78bfa;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #a78bfa;
+}
+
+.experience-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(167, 139, 250, 0.25);
+}
+
+.experience-role {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.experience-company {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #a1a1aa;
+}
+
+.experience-duration {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-top: 0.2rem;
+}
+
+.experience-description {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #d1d5db;
+  border-left: 3px solid #7c3aed;
+  padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 4rem 1rem;
+  }
+
+  .experience-heading {
+    font-size: 2.1rem;
+  }
+
+  .experience-timeline {
+    padding-left: 1rem;
+  }
+
+  .experience-item {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .experience-description {
+    font-size: 0.95rem;
+  }
+}
