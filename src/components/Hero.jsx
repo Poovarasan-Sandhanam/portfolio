@@ -54,7 +54,7 @@ const Hero = () => {
       </div>
 
       <p className="hero-subtext">
-        Building clean, scalable, and performant web & mobile apps that users love.
+       I build fast, scalable, and user-friendly applications for web and mobile.
       </p>
 
       <div className="hero-buttons">
@@ -63,7 +63,7 @@ const Hero = () => {
         </a>
 
         <a
-          href="https://drive.google.com/file/d/1WURdKIh0gU5wWI9ESn7jiRoPBUvNjD9E/view?usp=sharing"
+          href="https://drive.google.com/file/d/14V1q0BjL2ZO_YUejOTjwzqIrqYVrqZhJ/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Download resume"

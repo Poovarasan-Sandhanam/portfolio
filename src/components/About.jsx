@@ -1,7 +1,15 @@
 import React from 'react';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaGithub, FaGithubAlt } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiVisualstudiocode } from 'react-icons/si';
-import AboutImage from '../assets/aboutme-image.png'; // Update path accordingly
+import {
+  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs,
+  FaGithub, FaGithubAlt
+} from 'react-icons/fa';
+import {
+  SiExpress, SiMongodb, SiVisualstudiocode, SiTypescript,
+  SiFirebase, SiRedux, SiGraphql, SiAmazonaws, SiJest,
+  SiPostman, SiTrello, SiNextdotjs,
+  SiExpo
+} from 'react-icons/si';
+import AboutImage from '../assets/aboutme-image.png'; // Ensure the image path is correct
 import '../styles/About.css';
 
 const About = () => {
@@ -19,21 +27,32 @@ const About = () => {
 
           <div className="about-text">
             <p>
-              I'm Poovarasan Sandhanam, a passionate Full-Stack Developer specializing in crafting fast, scalable, and beautiful web and mobile applications.
-              With a strong foundation in JavaScript, React, Node.js, and modern backend technologies, I love turning complex problems into elegant solutions.
+              Hi, I'm <strong>Poovarasan Sandhanam</strong> — a passionate Full-Stack Developer
+              who specializes in crafting fast, scalable, and beautiful web and mobile applications.
+              I have a strong foundation in JavaScript, TypeScript, React, React Native, Node.js, Express.js,
+              MongoDB, and cloud tools like AWS and Firebase. I enjoy turning complex problems into elegant,
+              high-performance solutions.
             </p>
 
             <div className="skills">
               <h3>My Skills</h3>
               <div className="skill-icons" aria-label="Skills Icons">
-                <FaHtml5 className="skill-icon html" title="HTML5" />
-                <FaCss3Alt className="skill-icon css" title="CSS3" />
                 <FaJsSquare className="skill-icon js" title="JavaScript" />
-                <FaReact className="skill-icon react" title="React" />
+                <SiTypescript className="skill-icon ts" title="TypeScript" />
+                <FaReact className="skill-icon react" title="React / React Native" />
+                <SiExpo className="skill-icon next" title="Expo" />
+                <SiNextdotjs className="skill-icon next" title="Next.js" />
+                <SiRedux className="skill-icon redux" title="Redux" />
                 <FaNodeJs className="skill-icon node" title="Node.js" />
                 <SiExpress className="skill-icon express" title="Express.js" />
                 <SiMongodb className="skill-icon mongo" title="MongoDB" />
+                <SiGraphql className="skill-icon graphql" title="GraphQL" />
+                <SiFirebase className="skill-icon firebase" title="Firebase" />
+                <SiAmazonaws className="skill-icon aws" title="AWS (S3, EC2, Amplify)" />
                 <FaGithub className="skill-icon github" title="GitHub" />
+                <SiPostman className="skill-icon postman" title="Postman" />
+                <SiJest className="skill-icon jest" title="Jest" />
+                <SiTrello className="skill-icon trello" title="Trello / JIRA" />
                 <SiVisualstudiocode className="skill-icon vscode" title="VS Code" />
               </div>
             </div>
@@ -47,13 +66,7 @@ const About = () => {
                 <h4>5+</h4>
                 <p>Projects Completed</p>
               </div>
-              {/* <div className="stat-box" role="listitem">
-                <h4>10+</h4>
-                <p>Clients Served</p>
-              </div> */}
             </div>
-
-        
           </div>
         </div>
       </div>

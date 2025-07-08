@@ -102,13 +102,23 @@
 /* Skill icon colors */
 .skill-icon.html { color: #e34c26; }
 .skill-icon.css { color: #264de4; }
-.skill-icon.js { color: #f0db4f; filter: drop-shadow(0 0 3px #f0db4f);}
-.skill-icon.react { color: #61dafb; filter: drop-shadow(0 0 6px #61dafb);}
+.skill-icon.js { color: #f0db4f; filter: drop-shadow(0 0 3px #f0db4f); }
+.skill-icon.react { color: #61dafb; filter: drop-shadow(0 0 6px #61dafb); }
 .skill-icon.node { color: #3c873a; }
-.skill-icon.express { color: #fff; }
+.skill-icon.express { color: #ffffff; }
 .skill-icon.mongo { color: #4db33d; }
-.skill-icon.github { color: #fff; }
+.skill-icon.github { color: #ffffff; }
 .skill-icon.vscode { color: #7c3aed; }
+
+.skill-icon.ts { color: #3178c6; }
+.skill-icon.firebase { color: #ffa000; }
+.skill-icon.redux { color: #764abc; }
+.skill-icon.aws { color: #ff9900; }
+.skill-icon.jest { color: #99425b; }
+.skill-icon.postman { color: #ff6c37; }
+.skill-icon.trello { color: #0079bf; }
+.skill-icon.graphql { color: #e10098; }
+.skill-icon.next { color: #ffffff; }
 
 /* Stats boxes */
 .stats {
@@ -148,7 +158,7 @@
   font-weight: 500;
 }
 
-/* Button */
+/* CTA Button (Optional use) */
 .about-button {
   display: inline-block;
   margin-top: 3.5rem;
@@ -171,7 +181,7 @@
   outline: none;
 }
 
-/* Responsive */
+/* Responsive layout adjustments */
 @media (min-width: 768px) {
   .about-content {
     flex-direction: row;
@@ -181,13 +191,19 @@
   }
 }
 
+@media (max-width: 768px) {
+  .skill-icons {
+    justify-content: center;
+  }
+
+  .skill-icon {
+    font-size: 2.2rem;
+  }
+}
+
 @media (max-width: 480px) {
   .about-text {
     font-size: 1rem;
-  }
-
-  .skill-icons {
-    justify-content: center;
   }
 
   .stats {

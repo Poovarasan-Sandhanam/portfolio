@@ -1,32 +1,37 @@
 import React, { useState } from "react";
 import "../styles/Projects.css";
-import employeeMSImage from "../assets/nws.png";
-import bookMSImage from "../assets/barkle.png";
+import nwsImage from "../assets/nws.png";
+import barkleImage from "../assets/barkle.png";
 import { FaExternalLinkAlt, FaInfoCircle } from "react-icons/fa";
 
 const projects = [
+ 
   {
     id: 1,
     name: "NWS – Fitness Planner",
-    technologies: ["React Native", "Firebase", "Redux", "CodePush"],
-    image: employeeMSImage,
-    playstore:
-      "https://play.google.com/store/apps/details?id=com.nws&hl=en_GB&pli=1",
-      appstore:"https://apps.apple.com/gb/app/nourish-with-sim/id1547388267",
+    technologies: ["React Native", "Firebase", "Redux", "Native Modules"],
+    image: nwsImage,
+    playstore: "https://play.google.com/store/apps/details?id=com.nws&hl=en_GB&pli=1",
+    appstore: "https://apps.apple.com/gb/app/nourish-with-sim/id1547388267",
     description:
-      "I implemented major features like workout tracking, user profile management, and integrated Firebase Authentication & Firestore. My focus was performance and offline support using Redux Persist and CodePush for fast deployment.",
+    "Developed core features including authentication, UI components, API integration, and pagination. Refactored legacy class components to modern functional components. Fixed bugs, optimized performance, and helped implement new functionalities with native module support. Integrated Razorpay payment gateway to enable secure and seamless payment processing within the app."
+
+
   },
   {
-    id: 2,
-    name: "Barkle – Fitness Challenge App",
-    technologies: ["React Native", "Firebase", "Redux", "Native Modules"],
-    image: bookMSImage,
-    playstore:
-      "https://play.google.com/store/apps/details?id=com.Barkle.subscription&hl=en_GB",
-       appstore:"https://apps.apple.com/ai/app/barkle/id6463427532",
-    description:
-      "Led development of challenge tracking, leaderboard UI, and dynamic content fetching. Built custom native modules for step tracking and implemented Firebase Cloud Messaging for real-time updates.",
-  },
+  id: 2,
+  name: "Barkle – Fitness Challenge App",
+  technologies: ["React Native", "Redux", "Native Modules"],
+  image: barkleImage,
+  playstore: "https://play.google.com/store/apps/details?id=com.Barkle.subscription&hl=en_GB",
+  appstore: "https://apps.apple.com/ai/app/barkle/id6463427532",
+  description:
+   "Led the development of core app features, including custom chart components for tracking user progress and fitness challenges. Integrated and optimized REST APIs for seamless data syncing between frontend and backend services. Enhanced the UI/UX for improved user engagement and accessibility. Managed global state with Redux, implemented Firebase modules (Authentication, Firestore, Cloud Messaging, Analytics), integrated in-app purchase functionality to enable premium features and subscriptions, and debugged native modules across platforms. Worked closely with cross-functional teams to ensure smooth CI/CD, performance optimization, and successful app store deployments on both iOS and Android."
+
+}
+
+
+
 ];
 
 const Projects = () => {
