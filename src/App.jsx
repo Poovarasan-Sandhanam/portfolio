@@ -8,15 +8,9 @@ import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Education from './components/Education'
 import Achievements from './components/Achievements'
-import InitializeAnalytics from './utils/analytics';
-import { useEffect } from 'react';
 
 function App() {
 
-  // Initialize Google Analytics
-  useEffect(() => {
-    InitializeAnalytics();
-  }, []);
 
   return (
     <div>
