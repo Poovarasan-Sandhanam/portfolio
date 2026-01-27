@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { FaEnvelope, FaPhone, FaMapMarkedAlt } from "react-icons/fa";
 import "../styles/Contact.css";
+import { personalInfo } from "../data";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -15,11 +17,13 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     const { name, email, message } = formData;
 
     if (!name || !email || !message) {
       setStatus("❗ Please fill out all fields.");
+      setIsSubmitting(false);
       return;
     }
 
@@ -39,6 +43,8 @@ const Contact = () => {
     } catch (error) {
       console.error("Form error:", error);
       setStatus("❌ Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -50,16 +56,16 @@ const Contact = () => {
 
           <div className="contact-details">
             <div className="detail">
-              <FaEnvelope className="icon" />
-              <a href="mailto:poovarasansandhanam@gmail.com">poovarasansandhanam@gmail.com</a>
+              <FaEnvelope className="icon" aria-hidden="true" />
+              <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
             </div>
             <div className="detail">
-              <FaPhone className="icon" />
-              <span>+44 07909810485</span>
+              <FaPhone className="icon" aria-hidden="true" />
+              <span>{personalInfo.phone}</span>
             </div>
             <div className="detail">
-              <FaMapMarkedAlt className="icon" />
-              <span>Aberdeen, Scotland, UK</span>
+              <FaMapMarkedAlt className="icon" aria-hidden="true" />
+              <span>{personalInfo.location}</span>
             </div>
           </div>
         </div>
@@ -98,8 +104,8 @@ const Contact = () => {
             />
           </div>
 
-          <button type="submit" className="send-button">
-            Send Message
+          <button type="submit" className="send-button" disabled={isSubmitting}>
+            {isSubmitting ? "Sending..." : "Send Message"}
           </button>
 
           {status && <p className="form-status">{status}</p>}

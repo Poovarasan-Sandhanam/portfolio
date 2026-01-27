@@ -1,38 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Projects.css";
-import nwsImage from "../assets/nws.png";
-import barkleImage from "../assets/barkle.png";
 import { FaExternalLinkAlt, FaInfoCircle } from "react-icons/fa";
-
-const projects = [
- 
-  {
-    id: 1,
-    name: "NWS – Fitness Planner",
-    technologies: ["React Native", "Firebase", "Redux", "Native Modules"],
-    image: nwsImage,
-    playstore: "https://play.google.com/store/apps/details?id=com.nws&hl=en_GB&pli=1",
-    appstore: "https://apps.apple.com/gb/app/nourish-with-sim/id1547388267",
-    description:
-    "Developed core features including authentication, UI components, API integration, and pagination. Refactored legacy class components to modern functional components. Fixed bugs, optimized performance, and helped implement new functionalities with native module support. Integrated Razorpay payment gateway to enable secure and seamless payment processing within the app."
-
-
-  },
-  {
-  id: 2,
-  name: "Barkle – Fitness Challenge App",
-  technologies: ["React Native", "Redux", "Native Modules"],
-  image: barkleImage,
-  playstore: "https://play.google.com/store/apps/details?id=com.Barkle.subscription&hl=en_GB",
-  appstore: "https://apps.apple.com/ai/app/barkle/id6463427532",
-  description:
-   "Led the development of core app features, including custom chart components for tracking user progress and fitness challenges. Integrated and optimized REST APIs for seamless data syncing between frontend and backend services. Enhanced the UI/UX for improved user engagement and accessibility. Managed global state with Redux, implemented Firebase modules (Authentication, Firestore, Cloud Messaging, Analytics), integrated in-app purchase functionality to enable premium features and subscriptions, and debugged native modules across platforms. Worked closely with cross-functional teams to ensure smooth CI/CD, performance optimization, and successful app store deployments on both iOS and Android."
-
-}
-
-
-
-];
+import { projects } from "../data";
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(null);
@@ -65,31 +34,38 @@ const Projects = () => {
               <div className="project-info">
                 <h3 className="project-name">{project.name}</h3>
                 <div className="project-tech" aria-label="Technologies used">
-                  {project.technologies.map((tech, index) => (
+                  {project.technologies.slice(0, 3).map((tech, index) => (
                     <span className="tech-badge" key={index}>
                       {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 3 && (
+                    <span className="tech-badge">+{project.technologies.length - 3}</span>
+                  )}
                 </div>
                 <div className="project-actions">
-                  <a
-                    href={project.playstore}
-                    className="project-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Open Play Store link for ${project.name}`}
-                  >
-                    Play Store <FaExternalLinkAlt className="external-icon" />
-                  </a>
-                  <a
-                    href={project.appstore}
-                    className="project-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Open Play Store link for ${project.name}`}
-                  >
-                    App Store <FaExternalLinkAlt className="external-icon" />
-                  </a>
+                  {project.playstore && (
+                    <a
+                      href={project.playstore}
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open Play Store link for ${project.name}`}
+                    >
+                      Play Store <FaExternalLinkAlt className="external-icon" />
+                    </a>
+                  )}
+                  {project.appstore && (
+                    <a
+                      href={project.appstore}
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open App Store link for ${project.name}`}
+                    >
+                      App Store <FaExternalLinkAlt className="external-icon" />
+                    </a>
+                  )}
 
                   <button
                     className="project-details-button"
@@ -145,3 +121,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

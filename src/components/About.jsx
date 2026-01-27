@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs,
-  FaGithub, FaGithubAlt
-} from 'react-icons/fa';
-import {
-  SiExpress, SiMongodb, SiVisualstudiocode, SiTypescript,
-  SiFirebase, SiRedux, SiGraphql, SiAmazonaws, SiJest,
-  SiPostman, SiTrello, SiNextdotjs,
-  SiExpo
-} from 'react-icons/si';
-import AboutImage from '../assets/aboutme-image.png'; // Ensure the image path is correct
+import AboutImage from '../assets/aboutme-image.png';
 import '../styles/About.css';
+import { personalInfo, skills } from '../data';
 
 const About = () => {
   return (
@@ -21,51 +12,47 @@ const About = () => {
         <div className="about-content">
           <img
             src={AboutImage}
-            alt="Poovarasan Sandhanam"
+            alt={personalInfo.name}
             className="about-image"
           />
 
           <div className="about-text">
             <p>
-              Hi, I'm <strong>Poovarasan Sandhanam</strong> — a passionate Full-Stack Developer
-              who specializes in crafting fast, scalable, and beautiful web and mobile applications.
-              I have a strong foundation in JavaScript, TypeScript, React, React Native, Node.js, Express.js,
-              MongoDB, and cloud tools like AWS and Firebase. I enjoy turning complex problems into elegant,
-              high-performance solutions.
+              {personalInfo.profileSummary}
             </p>
 
             <div className="skills">
               <h3>My Skills</h3>
               <div className="skill-icons" aria-label="Skills Icons">
-                <FaJsSquare className="skill-icon js" title="JavaScript" />
-                <SiTypescript className="skill-icon ts" title="TypeScript" />
-                <FaReact className="skill-icon react" title="React / React Native" />
-                <SiExpo className="skill-icon next" title="Expo" />
-                <SiNextdotjs className="skill-icon next" title="Next.js" />
-                <SiRedux className="skill-icon redux" title="Redux" />
-                <FaNodeJs className="skill-icon node" title="Node.js" />
-                <SiExpress className="skill-icon express" title="Express.js" />
-                <SiMongodb className="skill-icon mongo" title="MongoDB" />
-                <SiGraphql className="skill-icon graphql" title="GraphQL" />
-                <SiFirebase className="skill-icon firebase" title="Firebase" />
-                <SiAmazonaws className="skill-icon aws" title="AWS (S3, EC2, Amplify)" />
-                <FaGithub className="skill-icon github" title="GitHub" />
-                <SiPostman className="skill-icon postman" title="Postman" />
-                <SiJest className="skill-icon jest" title="Jest" />
-                <SiTrello className="skill-icon trello" title="Trello / JIRA" />
-                <SiVisualstudiocode className="skill-icon vscode" title="VS Code" />
+                {skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className={`skill-item ${skill.category} ${skill.name
+                      .toLowerCase()
+                      .replace(/[.\s()+]/g, '')}`}
+                    style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "10px" }}
+                  >
+                    <skill.icon
+                      className="skill-icon"
+                      title={skill.name}
+                      style={{ fontSize: "40px" }}
+                    />
+                    <span className="skill-name" style={{ marginTop: "5px", textAlign: "center", fontSize: "14px" }}>
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
 
+
             <div className="stats" role="list" aria-label="Statistics">
-              <div className="stat-box" role="listitem">
-                <h4>2+</h4>
-                <p>Years Experience</p>
-              </div>
-              <div className="stat-box" role="listitem">
-                <h4>5+</h4>
-                <p>Projects Completed</p>
-              </div>
+              {personalInfo.stats.map((stat, index) => (
+                <div className="stat-box" role="listitem" key={index}>
+                  <h4>{stat.value}</h4>
+                  <p>{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -75,3 +62,4 @@ const About = () => {
 };
 
 export default About;
+
