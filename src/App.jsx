@@ -1,5 +1,4 @@
 
-import './App.css'
 import About from './components/About'
 import Contact from './components/Contact'
 import Hero from './components/Hero'
@@ -10,10 +9,8 @@ import Education from './components/Education'
 import Achievements from './components/Achievements'
 
 function App() {
-
-
   return (
-    <div>
+    <div className="min-h-screen bg-netflixBlack">
       <Navbar />
       <Hero />
       <About />
@@ -22,7 +19,6 @@ function App() {
       <Education />
       <Achievements />
       <Contact />
-
     </div>
   )
 }

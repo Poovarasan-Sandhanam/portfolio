@@ -1,11 +1,11 @@
 import {
   FaJsSquare, FaReact, FaNodeJs, FaGithub, FaLinkedin, FaBriefcase, FaPlaneDeparture, FaCode,
-  FaApple, FaAndroid, FaGitAlt, FaCogs
+  FaApple, FaAndroid, FaGitAlt, FaCogs, FaAws
 } from 'react-icons/fa';
 import {
   SiTypescript, SiExpo, SiNextdotjs, SiRedux, SiExpress, SiMongodb,
-  SiGraphql, SiFirebase, SiAmazonaws, SiPostman, SiJest, SiJira,
-  SiVisualstudiocode, SiTailwindcss, SiPostgresql, SiSqlite, SiGithubactions,
+  SiGraphql, SiFirebase, SiPostman, SiJest, SiJira,
+  SiTailwindcss, SiPostgresql, SiSqlite, SiGithubactions,
   SiAndroidstudio, SiXcode
 } from 'react-icons/si';
 import { TbApi, TbPlug } from 'react-icons/tb';
@@ -23,7 +23,7 @@ import creaplayImage from "./assets/crea.png";
 
 export const personalInfo = {
   name: "Poovarasan Sandhanam",
-  role: "React Native / Mobile and Web Software Engineer",
+  role: "React Native / React.js / Full Stack Engineer",
   location: "Northampton, UK",
   email: "poovarasanksp001@gmail.com",
   phone: "+44 7909810485",
@@ -84,7 +84,7 @@ export const skills = [
   { name: "Firebase Analytics", icon: SiFirebase, category: "testing" },
 
   // Cloud & DevOps
-  { name: "AWS (EC2, S3, Amplify)", icon: SiAmazonaws, category: "cloud" },
+  { name: "AWS (EC2, S3, Amplify)", icon: FaAws, category: "cloud" },
   { name: "GitHub Actions", icon: SiGithubactions, category: "cloud" },
   { name: "Firebase", icon: SiFirebase, category: "cloud" },
 
@@ -94,7 +94,7 @@ export const skills = [
   { name: "Xcode", icon: SiXcode, category: "tools" },
   { name: "Postman", icon: SiPostman, category: "tools" },
   { name: "JIRA", icon: SiJira, category: "tools" },
-  { name: "VS Code", icon: SiVisualstudiocode, category: "tools" }
+  { name: "VS Code", icon: FaCode, category: "tools" }
 ];
 
 
@@ -160,13 +160,13 @@ export const projects = [
   },
   {
     id: 5,
-     name: "Creaplay",
+    name: "Creaplay",
     technologies: ["React Native", "Firebase", "Audio Playback", "Animations"],
     image: creaplayImage,
     description: "Children's storytelling mobile application with interactive audio playback, engaging animations, and parental controls. Features offline story downloads and progress tracking.",
     domain: "Education & Entertainment",
-    playstore:"https://play.google.com/store/apps/details?id=com.siam.creaplay_native&pcampaignid=web_share"
-  
+    playstore: "https://play.google.com/store/apps/details?id=com.siam.creaplay_native&pcampaignid=web_share"
+
   },
   {
     id: 6,
