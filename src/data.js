@@ -27,7 +27,7 @@ export const personalInfo = {
   location: "London, UK",
   email: "poovarasanksp001@gmail.com",
   phone: "+44 7909810485",
-  profileSummary: "Senior Mobile Software Engineer with 5 years of experience delivering production-grade React Native applications across healthcare, fitness, and on-demand service domains. Currently based in Northampton, UK with full right to work and MSc in Computing (Software Engineering) from University of Northampton. Proven track record building scalable, high-performance mobile applications serving 20,000+ active users. Expert in TypeScript, React Native, full-stack development, performance optimisation, CI/CD pipelines, and Agile methodologies. Seeking opportunities with innovative UK tech companies to deliver exceptional mobile experiences.",
+  profileSummary: "Senior Mobile Software Engineer with 5 years of experience delivering production-grade React Native applications across healthcare, fitness, and on-demand service domains. Currently based in London, UK with full right to work and MSc in Computing (Software Engineering) from University of Northampton. Proven track record building scalable, high-performance mobile applications serving 20,000+ active users. Expert in TypeScript, React Native, full-stack development, performance optimisation, CI/CD pipelines, and Agile methodologies. Seeking opportunities with innovative UK tech companies to deliver exceptional mobile experiences.",
   availability: [
     { label: "Open to Work", icon: FaBriefcase },
     { label: "Eligible to work in UK", icon: "🇬🇧" },
