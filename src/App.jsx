@@ -10,7 +10,7 @@ import Achievements from './components/Achievements'
 
 function App() {
   return (
-    <div className="min-h-screen bg-netflixBlack">
+    <div className="min-h-screen bg-darkBlack">
       <Navbar />
       <Hero />
       <About />

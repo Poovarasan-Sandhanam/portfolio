@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,13 +9,36 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-netflixBlack text-white m-0 p-0 font-sans antialiased overflow-x-hidden;
+    @apply bg-darkBlack text-white m-0 p-0 font-sans antialiased overflow-x-hidden;
+    /* Clean futuristic tech grid pattern overlay */
+    background-image: 
+      linear-gradient(rgba(0, 255, 102, 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 102, 0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
   }
   /* Selection color */
   ::selection {
-    background-color: #E50914;
-    color: white;
+    background-color: #00FF66;
+    color: #080808;
   }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c1c1c;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 255, 102, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00FF66;
+  box-shadow: 0 0 10px #00FF66;
 }
 
 @layer utilities {
@@ -22,5 +47,22 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+  }
+  
+  .glow-border-hover {
+    transition: all 0.3s ease-in-out;
+  }
+  .glow-border-hover:hover {
+    border-color: #00FF66;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+  }
+
+  .tech-grid-header {
+    background: linear-gradient(90deg, rgba(0, 255, 102, 0.08) 0%, transparent 100%);
+    border-left: 3px solid #00FF66;
   }
 }

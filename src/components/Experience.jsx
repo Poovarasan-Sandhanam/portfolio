@@ -1,33 +1,73 @@
 import { experience } from '../data';
+import { motion } from 'framer-motion';
 
 const Experience = () => {
   return (
-    <section className="py-10 sm:py-12 bg-netflixBlack" id="experience" aria-label="Experience Section">
+    <section className="py-20 bg-darkBlack border-t border-cyberGreen/10" id="experience" aria-label="Experience Section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 tracking-wide drop-shadow-sm">Experience</h2>
+        
+        {/* Title */}
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 sm:mb-16 tech-grid-header p-4"
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-wide uppercase">
+            Work History
+          </h2>
+          <p className="text-xs sm:text-sm font-mono text-cyberGreen mt-1">&gt; poovarasan --list-experience</p>
+        </motion.div>
 
-        {/* Grid on desktop, stack on mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        {/* Timeline wrapper */}
+        <div className="relative border-l border-gray-800 ml-4 md:ml-6 pl-6 sm:pl-8 space-y-12">
           {experience.map((item, index) => (
-            <div
-              className="bg-netflixDark p-5 sm:p-6 rounded-lg shadow-lg border border-gray-800 hover:border-gray-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl group"
+            <motion.div
               key={index}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ type: 'spring', stiffness: 80, delay: index * 0.15 }}
+              className="relative group"
             >
-              <div className="flex items-start justify-between gap-3 mb-3">
-                <div>
-                  <div className="text-base sm:text-xl font-bold text-white group-hover:text-netflixRed transition-colors leading-tight">{item.role}</div>
-                  <div className="text-sm sm:text-lg font-semibold text-gray-300 mt-1">{item.company}</div>
-                </div>
-                <span className="text-xs text-netflixRed font-mono font-semibold bg-netflixRed/10 px-2 py-1 rounded whitespace-nowrap border border-netflixRed/20">
-                  {item.duration}
-                </span>
+              {/* Timeline dot */}
+              <div className="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-darkBlack border border-gray-700 group-hover:border-cyberGreen group-hover:bg-cyberGreen flex items-center justify-center transition-all duration-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-transparent group-hover:bg-darkBlack transition-colors"></span>
               </div>
-              <p className="text-xs sm:text-sm text-gray-400 leading-relaxed line-clamp-4 sm:line-clamp-none">
-                {item.description}
-              </p>
-            </div>
+
+              {/* Glowing hover dot overlay */}
+              <div className="absolute -left-[37px] md:-left-[45px] top-0 w-7 h-7 rounded-full bg-cyberGreen/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 animate-pulse"></div>
+
+              {/* Card Container */}
+              <motion.div 
+                whileHover={{ x: 6 }}
+                className="bg-darkCard p-6 sm:p-8 rounded-xl border border-gray-800/80 hover:border-cyberGreen/30 hover:shadow-neon shadow-lg transition-all duration-300"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyberGreen transition-colors leading-tight">
+                      {item.role}
+                    </h3>
+                    <div className="text-sm sm:text-base font-semibold text-gray-300 mt-1">
+                      {item.company}
+                    </div>
+                  </div>
+                  
+                  {/* Date badge */}
+                  <span className="inline-flex max-w-fit text-xs font-mono font-semibold text-cyberGreen bg-cyberGreen/10 px-3 py-1.5 rounded-md border border-cyberGreen/20">
+                    [{item.duration}]
+                  </span>
+                </div>
+                
+                <p className="text-xs sm:text-sm text-gray-400 leading-relaxed font-sans">
+                  {item.description}
+                </p>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
