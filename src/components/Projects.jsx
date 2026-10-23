@@ -1,4 +1,4 @@
-import { FaExternalLinkAlt, FaPlay, FaApple } from "react-icons/fa";
+import { FaPlay, FaApple } from "react-icons/fa";
 import { projects } from "../data";
 import { motion } from 'framer-motion';
 
@@ -35,7 +35,7 @@ const Projects = () => {
           className="mb-12 sm:mb-16 tech-grid-header p-4"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-wide uppercase">
-            Featured Projects
+            Production Apps
           </h2>
           <p className="text-xs sm:text-sm font-mono text-cyberGreen mt-1">&gt; poovarasan --list-projects --production</p>
         </motion.div>

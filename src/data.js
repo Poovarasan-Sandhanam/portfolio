@@ -39,7 +39,7 @@ export const personalInfo = {
   ],
   stats: [
     { value: "5", label: "Years Experience" },
-    { value: "10+", label: "Projects Completed" }
+    { value: "15+", label: "Projects Completed" }
   ]
 };
 
@@ -191,6 +191,158 @@ export const projects = [
     image: talentsImage,
     description: "Job portal platform connecting job seekers and employers. Features advanced search and matching algorithms, profile management, application tracking, and real-time notifications for job opportunities.",
     domain: "Job Portal"
+  }
+];
+
+export const personalProjects = [
+  {
+    id: "pulse",
+    name: "Pulse",
+    tagline: "Motion-first crypto trading simulator",
+    status: "Active",
+    year: "2026",
+    technologies: ["Expo SDK 57", "React Native", "Reanimated", "Skia", "Gesture Handler", "Zustand", "FlashList"],
+    description: "A mobile trading simulator built to show off native-quality motion, gestures and charts. Live market data from CoinGecko, GPU-rendered price charts with scrub and pinch-zoom, and trades confirmed with a haptic swipe gesture.",
+    highlights: [
+      "Interactive Skia price charts with crosshair scrubbing, pinch zoom and 1H–1Y timeframes",
+      "Swipe-to-trade confirmation with spring physics, haptics and a custom bottom sheet",
+      "Performance lab comparing JS-thread and UI-thread gestures with a live FPS counter",
+      "Upgraded from Expo SDK 51 to SDK 57 (React Native 0.86, Reanimated 4)"
+    ],
+    github: "https://github.com/Poovarasan-Sandhanam/Pulse",
+    domain: "FinTech"
+  },
+  {
+    id: "beatn",
+    name: "BeatN",
+    tagline: "Private, offline-first AI voice journal",
+    status: "In Progress",
+    year: "2026",
+    technologies: ["Expo SDK 57", "React Native", "TypeScript", "whisper.cpp", "llama.cpp", "Zod", "Jest"],
+    description: "Speak and BeatN transcribes and reflects on your journal entries entirely on device. Speech-to-text runs on Whisper and reflection on a local LLM, so the only network traffic is downloading the models.",
+    highlights: [
+      "On-device pipeline: 16 kHz PCM capture → whisper.cpp transcript → llama.cpp summary, mood and topics",
+      "LLM output validated against a Zod schema before it is trusted",
+      "Layered architecture with engine ports, an inference arbiter and model residency manager",
+      "106 tests across 8 suites, strict TypeScript"
+    ],
+    github: "https://github.com/Poovarasan-Sandhanam/BeatN",
+    domain: "On-Device AI"
+  },
+  {
+    id: "telemedicine",
+    name: "TeleMedicine",
+    tagline: "Full-stack telemedicine platform",
+    status: "Live API",
+    year: "2026",
+    technologies: ["React Native", "TypeScript", "Redux Toolkit", "Node.js", "Express", "MongoDB", "Stripe", "OpenAI", "Cloud Run"],
+    description: "A cross-platform app and REST API connecting patients with doctors for remote consultations, appointment booking, e-prescriptions and payments, with AI symptom triage that routes patients to the right specialist.",
+    highlights: [
+      "AI triage with emergency red-flag screening that runs before the model and a rules-based fallback",
+      "Appointment concurrency handled with temporary slot holds and Stripe payment verification",
+      "JWT auth with patient and doctor roles and token revocation that works across Cloud Run instances",
+      "Deployed on Google Cloud Run with Docker and health checks"
+    ],
+    github: "https://github.com/Poovarasan-Sandhanam/TeleMedicine_Mobile",
+    githubSecondary: { label: "Backend", url: "https://github.com/Poovarasan-Sandhanam/TeleMedicine-Backend" },
+    domain: "Healthcare"
+  },
+  {
+    id: "nextoff",
+    name: "NextOff",
+    tagline: "UK payday and bank holiday countdown",
+    status: "Active",
+    year: "2026",
+    technologies: ["Expo SDK 57", "Expo Router", "TypeScript", "Firebase", "Cloud Functions", "FCM"],
+    description: "Counts down to your next payday and the next UK bank holiday for England & Wales, Scotland or Northern Ireland. Paydays can be a fixed date or a rule like \"last Friday of the month\", and move to the previous working day when they fall on a weekend or holiday.",
+    highlights: [
+      "Payday rules for fixed dates and nth-weekday schedules, adjusted for weekends and regional bank holidays",
+      "Daily scheduled Cloud Function checks paydays and sends push reminders through FCM",
+      "Firestore-triggered announcement notifications; user settings kept on device"
+    ],
+    github: "https://github.com/Poovarasan-Sandhanam/Nextoff",
+    domain: "Personal Finance"
+  },
+  {
+    id: "ukpaycalc",
+    name: "UKPayCalc",
+    tagline: "UK salary, contractor and holiday pay calculator",
+    status: "Active",
+    year: "2026",
+    technologies: ["React Native", "TypeScript", "Zustand", "React Hook Form", "Firebase", "GitHub Actions", "Fastlane"],
+    description: "A calculator app for UK take-home salary, contractor day rates and holiday entitlement, with a history of past calculations.",
+    highlights: [
+      "Separate, unit-tested calculation modules for salary, contractor and holiday pay",
+      "CI on every PR: ESLint, tsc, Jest, plus Android and iOS builds",
+      "Tag-triggered release pipelines to Google Play internal track and TestFlight via Fastlane",
+      "Firebase Analytics and Crashlytics"
+    ],
+    github: "https://github.com/Poovarasan-Sandhanam/ukpaycalc",
+    domain: "Personal Finance"
+  },
+  {
+    id: "runnacoach",
+    name: "RunnaCoach",
+    tagline: "Adaptive running coach with Apple Watch bridge",
+    status: "In Progress",
+    year: "2026",
+    technologies: ["React Native", "TypeScript", "Redux Toolkit", "Clean Architecture", "Native Modules"],
+    description: "A running coach that adapts your training plan to how your runs actually went, using pace and training load (duration × effort) to adjust future workouts.",
+    highlights: [
+      "Adaptive engine that recalculates target paces from session training load",
+      "Native bridge for sending workouts to and receiving runs from Apple Watch",
+      "Feature-sliced clean architecture with domain, data and presentation layers and view models"
+    ],
+    github: "https://github.com/Poovarasan-Sandhanam/runnacoach",
+    domain: "Fitness"
+  },
+  {
+    id: "expense-tracker",
+    name: "Expense Tracker",
+    tagline: "Full-stack personal finance app",
+    status: "Complete",
+    year: "2025",
+    technologies: ["Expo", "Expo Router", "Clerk", "Node.js", "Express", "Neon Postgres", "Upstash"],
+    description: "A mobile expense tracker with sign-in, income and expense transactions and a running balance, backed by a Node.js API on serverless Postgres.",
+    highlights: [
+      "Clerk authentication with secure token storage",
+      "Express API on Neon serverless Postgres",
+      "Upstash Redis rate limiting on the API"
+    ],
+    github: "https://github.com/Poovarasan-Sandhanam/expense-tracker",
+    domain: "Personal Finance"
+  },
+  {
+    id: "aura",
+    name: "Aura",
+    tagline: "React storefront with cart and filters",
+    status: "Complete",
+    year: "2026",
+    technologies: ["React", "Vite", "CSS"],
+    description: "A product catalogue web app with search, category and price filters, sorting, a product detail modal and a cart drawer. Theme and cart persist between visits.",
+    highlights: [
+      "Search, category, price-range and sort filters",
+      "Cart drawer and product modal",
+      "Light and dark themes that follow the system setting"
+    ],
+    github: "https://github.com/Poovarasan-Sandhanam/Aura",
+    domain: "E-commerce"
+  },
+  {
+    id: "dating-app",
+    name: "Dating App",
+    tagline: "Social dating app with real-time chat",
+    status: "Complete",
+    year: "2024",
+    technologies: ["React Native", "Firebase Auth", "Firestore", "FCM", "Gifted Chat", "CodePush"],
+    description: "A React Native dating app with onboarding, profiles, a photo feed and one-to-one chat backed by Firebase.",
+    highlights: [
+      "Firebase authentication, Firestore data and Storage for photo uploads",
+      "Real-time chat with push notifications",
+      "Over-the-air updates with CodePush"
+    ],
+    github: "https://github.com/Poovarasan-Sandhanam/Dating-App-",
+    domain: "Social"
   }
 ];
 
